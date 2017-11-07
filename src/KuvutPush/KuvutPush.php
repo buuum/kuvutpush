@@ -64,7 +64,7 @@ class KuvutPush extends AbstractProvider
 
     protected function parseUrl(string $endpoint, array $parameters = [])
     {
-        $url = static::BASE_API_URL . $endpoint;
+        $url = static::BASE_API_URL . $endpoint . '?p=';
         foreach ($parameters as $parameter => $value) {
             if (!is_array($value)) {
                 $url .= '&' . $parameter . '=' . urlencode($value);
